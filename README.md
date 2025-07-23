@@ -1,100 +1,98 @@
-# FinBank Secure Pay 💸🔐
+# FinBank SecurePay 💸🔐  
+A DevSecOps-Driven CI/CD Pipeline for Secure Financial Transactions
 
-A simulated secure payment API system for financial applications — built with security-first DevSecOps practices. This project is designed to demonstrate real-world CI/CD pipelines, security integrations, and modern DevOps tools using **100% free tools**.
+## 🚀 Project Overview
+
+**FinBank SecurePay** is a production-grade DevSecOps project designed to simulate how a real bank might secure and automate deployments for its payment gateway APIs. The focus here is on integrating security into every phase of CI/CD without slowing down delivery speed.
+
+This project was built from scratch using modern DevOps and security tools like:
+- **GitHub Actions** (CI/CD)
+- **Terraform** (Infrastructure as Code)
+- **Snyk, Trivy, and Dependabot** (Security Scanning & Dependency Management)
+- **AWS CLI** (for deployment hooks)
+
+> Think of this as a real-world template for how startups and fintech companies can build secure, automated delivery pipelines from day one.
 
 ---
 
-## 🚀 Tech Stack
+## 🧰 Tools & Tech Stack
 
-- **FastAPI** – Lightweight Python API framework
-- **Docker** – Containerized deployment
-- **Trivy** – Vulnerability scanning for images and dependencies
-- **Snyk CLI** – Python dependency scanning (optional)
-- **GitHub Actions** – CI/CD automation
-- **Dependabot** – Automated dependency updates
-- **Terraform (upcoming)** – Infra-as-code for AWS deployment
+| Category              | Tool/Tech                     |
+|-----------------------|-------------------------------|
+| Source Control        | Git & GitHub                  |
+| CI/CD Pipeline        | GitHub Actions                |
+| Infrastructure as Code| Terraform                     |
+| Security Scanning     | Snyk, Trivy, Dependabot       |
+| Containerization      | Docker                        |
+| Cloud CLI             | AWS CLI                       |
+
+---
+
+## 🛠️ Key Features
+
+✅ **CI/CD with GitHub Actions**  
+- Push-to-deploy setup with multi-stage pipelines (build → scan → deploy)  
+- Secrets managed via GitHub repo secrets
+
+✅ **Security Built-In**  
+- Snyk: Scans for known vulnerabilities in dependencies  
+- Trivy: Container vulnerability scanning  
+- Dependabot: Auto PRs for outdated packages  
+
+✅ **Infrastructure via Terraform**  
+- Reproducible infra definitions (VPC, EC2, IAM roles)  
+- Version-controlled and modular
+
+✅ **Dev-Friendly Structure**  
+- Simple `myapp/` directory for API code  
+- `terraform/` folder for infra-as-code  
+- `.github/workflows/` contains full CI/CD pipeline
 
 ---
 
 ## 📁 Folder Structure
 
-FinBank-securePay/
+FinBank-SecurePay/
 │
-├── app/
-│ └── main.py # FastAPI app code
-│
-├── requirements.txt # Python dependencies
-├── Dockerfile # Docker image setup
-├── .github/
-│ └── workflows/
-│ └── ci.yml # GitHub Actions pipeline
-│
-├── snyk_report.json # (optional) Snyk scan results
-├── trivy_report.json # Trivy scan results
-└── README.md # You’re reading it!
+├── .github/workflows/ # GitHub Actions CI/CD pipeline
+├── myapp/ # Sample API app code (placeholder)
+├── terraform/ # Terraform infrastructure config
+├── Dockerfile # Container config for app
+├── README.md
 
-yaml
-Copy
-Edit
 
 ---
 
-## ⚙️ How It Works
-
-1. **FastAPI** serves a mock payment endpoint.
-2. **Docker** builds the image and runs the app locally at `http://localhost:8000`.
-3. **Trivy** scans for vulnerabilities in Docker image and Python dependencies.
-4. **GitHub Actions** automates CI pipeline:
-   - Build & test
-   - Run Trivy scans
-   - Report vulnerability status in PRs
-5. **Dependabot** automatically checks for dependency updates.
-
----
-
-## 🔐 Security Notes
-
-This project uses `python:3.11-slim` as base image. Some low-level system packages like `zlib1g` may have known vulnerabilities (e.g., `CVE-2023-45853`) which currently **have no upstream fixes**. This project is strictly for **demo and learning purposes**, not production use.
-
----
-
-## 🛠️ Setup Instructions
-
-**To Run Locally:**
+## 🧪 How To Run It Locally
 
 ```bash
-git clone https://github.com/<your-username>/FinBank-securePay.git
-cd FinBank-securePay
-docker build -t fin-bank-api .
-docker run -p 8000:8000 fin-bank-api
-App runs at: http://localhost:8000
+# Clone the repo
+git clone https://github.com/Saipranayakkinepally8/FinBank-SecurePay.git
 
-🔄 CI/CD Pipeline
-Whenever you push code:
+# Navigate to the app directory
+cd FinBank-SecurePay/myapp
 
-Docker image is built
+# Run the app locally (example using Python)
+python3 app.py
 
-Trivy scan is triggered
+🚨 Security Practices Followed
+✅ Secrets are never hardcoded
 
-(Optional) Snyk scan is run
+✅ Automated dependency updates (Dependabot)
 
-Results are logged in GitHub Actions tab
+✅ Continuous scanning on every push
 
-🎯 Goal of the Project
-To showcase DevSecOps understanding and practical application using real-world tools. This is Project #2 in a personal DevOps roadmap focused on security, automation, and cloud-native thinking.
+✅ Infrastructure linting and versioning📌 Why This Project Matters
+This isn’t just another DevOps demo. This project shows how to think like a security-first engineer. Everything is automated. Nothing is manual. Security is not an afterthought — it’s part of the pipeline.
 
-📌 Next Plans
-Deploy to AWS using Terraform
+Ideal for:
 
-Add OpenAPI documentation
+FinTech product teams
 
-Implement JWT-based auth
+DevOps/DevSecOps portfolios
 
-Enable log monitoring
+Recruiters looking for hands-on infrastructure experience
 
-📣 Contact
-Made with 💻 by Sai Pranay Akkinepally
-
-yaml
-Copy
-Edit
+👨‍💻 Author
+Sai Pranay Akkinepally
+DevOps Engineer | Cloud | Security-Aware Automation
